@@ -1,0 +1,9 @@
+.form-block {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+label {
+    min-width: 80px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
