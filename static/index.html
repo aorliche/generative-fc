@@ -7,35 +7,49 @@
 </head>
 <body>
     <h1>Generate FC</h1>
-    <p>Generate functional connectivity based on demographic and phenotype data.</p>
-    <form class='form-block'>
-        <label for='dataset'>Dataset:</label>
-        <select id='dataset' name='dataset'>
-            <option value='PNC'>Philadelphia Neurodevelopmental Cohort</option>
-            <option value='BSNIP'>Bipolar and Schizophrenia Network of Intermediate Phenotypes</option>
-        </select><br>
-        <label for='atlas'>Atlas:</label>
-        <select id='atlas' name='atlas'>
-            <option value='Power264'>Power264</option>
-        </select>
-    </form>
-    <form class='form-block'>
-        <label for='age'>Age:</label>
-        <input type='range' id='age' name='age' min='8' max='22' step='1' value='8'>
-        <span id='age-value'>8</span>
-        <br>
-        <label for='sex'>Sex:</label>
-        <input type='radio' name='sex' id='male' value='male' checked>Male
-        <input type='radio' name='sex' id='female' value='female'>Female<br>
-        <label for='sex'>Race:</label>
-        <select id='race' name='race'>
-            <option value='ea'>European Ancestry</option>
-            <option value='aa'>African Ancestry</option>
-        </select><br>
-        <label for='number'># Averaged:</label>
-        <input type='range' min='0' max='3' step='0.3' value='0' id='number' name='number' placeholder="Number">
-        <span id='number-value'>1</span><br>
-        <button id='generate'>Generate</button>
-    </form>
+    <p>Generate representative functional connectivity based on demographic and phenotype data.</p>
+    <div id='container'>
+        <div id='left'>
+            <form class='form-block'>
+                <label for='dataset'>Dataset:</label>
+                <select id='dataset' name='dataset'>
+                    <option value='PNC'>Philadelphia Neurodevelopmental Cohort</option>
+                    <option value='BSNIP'>Bipolar and Schizophrenia Network of Intermediate Phenotypes</option>
+                </select><br>
+                <label for='atlas'>Atlas:</label>
+                <select id='atlas' name='atlas'>
+                    <option value='Power264'>Power264</option>
+                </select>
+            </form>
+            <form class='form-block'>
+                <label for='preset'>Preset:</label>
+                <select id='preset' name='preset'>
+                    <option value='8-male-ea'>Young Child EA Male</option>
+                    <option value='8-female-ea'>Young Child EA Female</option>
+                    <option value='14-female-aa'>Teenage AA Female</option>
+                    <option value='22-male-aa'>Young Adult AA Male</option>
+                </select><br>
+                <label for='age'>Age:</label>
+                <input type='range' id='age' name='age' min='8' max='22' step='1' value='8'>
+                <span id='age-value'>8</span>
+                <br>
+                <label for='sex'>Sex:</label>
+                <input type='radio' name='sex' id='male' value='male' checked>Male
+                <input type='radio' name='sex' id='female' value='female'>Female<br>
+                <label for='sex'>Race:</label>
+                <select id='race' name='race'>
+                    <option value='ea'>European Ancestry</option>
+                    <option value='aa'>African Ancestry</option>
+                </select><br>
+                <label for='number'># Averaged:</label>
+                <input type='range' min='0' max='3' step='0.3' value='0' id='number' name='number' placeholder="Number">
+                <span id='number-value'>1</span><br>
+                <button id='generate'>Generate</button>
+            </form>
+        </div>
+        <div id='right'>
+            <img width='300' height='300' id='FC' src='img/FC.png'>
+        </div>
+    </div>
 </body>
 </html>

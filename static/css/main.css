@@ -7,3 +7,14 @@ label {
     display: inline-block;
     margin-bottom: 5px;
 }
+select {
+    max-width: 300px;
+}
+#container {
+    display: flex;
+    align-items: flex-start;
+}
+#left {
+    margin-right: 20px;
+}
+
