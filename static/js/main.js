@@ -11,4 +11,23 @@ window.addEventListener('load', () => {
         let val = $('#age').value;
         $('#age-value').innerText = parseInt(val);
     });
+    $('#preset').addEventListener('change', () => {
+        const idx = $('#preset').selectedIndex;
+        const val = $('#preset').options[idx].value;
+        let [age, sex, race] = val.split('-');
+        age = parseInt(age);
+        $('#age').value = age;
+        $('#age-value').innerText = age;
+        if (sex == 'male') {
+            $('#male').checked = true;
+        } else {
+            $('#female').checked = true;
+        }
+        for (let i=0; i<$('#race').options.length; i++) {
+            if ($('#race').options[i].value == race) {
+                $('#race').selectedIndex = i;
+                break;
+            }
+        }
+    });
 });
