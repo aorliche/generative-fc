@@ -43,7 +43,8 @@ def gen(n, age, sex, race, task='rest', var=False):
     for i in range(len(x)):
         mx = np.max(np.abs(x[i]))  
         if mx > 1:
-            x[i] = x[i] / mx
+            x[x > 1] = 1
+            x[x < -1] = -1
     if var:
         x = np.var(x, axis=0)
     else:
